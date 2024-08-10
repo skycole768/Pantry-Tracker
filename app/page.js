@@ -4,6 +4,7 @@ import {Box, Stack, Typography, Button, Modal, TextField, InputAdornment, IconBu
 import { firestore } from './firebase'
 import { collection, getDocs, addDoc, deleteDoc, doc, updateDoc} from "firebase/firestore"
 import { useEffect, useState} from "react"
+import Image from 'next/image';
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -186,9 +187,11 @@ export default function Home() {
         endAdornment: (
           <InputAdornment position="end">
             <IconButton edge="end" onClick={handleSearch}>
-              <img
+              <Image
                 src="/search.webp" 
                 alt="icon"
+                width='15'
+                height='15'
                 style={{ width: '2vw', height: '2vw' }}
               />
             </IconButton>
@@ -218,7 +221,7 @@ export default function Home() {
              textAlign: "center"
           }}
         >
-          Skyler's Pantry
+          Skyler&#39;s Pantry
         </Typography>
         <Button 
         onClick={handleAddClick}
